@@ -1,62 +1,4 @@
-@font-face {
-    font-family: "Orator W01";
-    src: url('../docs/fonts/Orator\ W01\ Medium.ttf');
-}
-@font-face {
-    font-family: "Helvetica W01";
-    src: url('../docs/fonts/Helvetica\ W01\ Roman.ttf');
-}
-@font-face {
-    font-family: "Filosofia";
-    src: url('../docs/fonts/FilosofiaUnicase.ttf');
-}
-@font-face {
-    font-family: "Akkurat";
-    src: url('../docs/fonts/Akkurat-Regular.ttf');
-}
-
-
-:root{
-    --bgbody: #f6f1eb;
-    --bgheader: #f5f1eb;
-    --font-title: "Orator W01", "Gill Sans", serif;
-    --font-body: "Helvetica W01", "Gill Sans", serif;
-    --font-body-secondary: "Courier New", monospace;
-    --font-filosophia: "Filosophia", serif;
-    --font-akkurat: "Akkurat", serif;
-    --font-weight-title: 400;
-    --font-weight-title-bold: 600;
-    --font-weight-cta: 500;
-    --font-weight-price-1: 400;
-    --font-weight-price-2: 400;
-    --font-weight-paragraph: 400;
-    --font-weight-paragraph-bold: 600;
-    --font-weight-link: 400;
-    --font-weight-error: 400;
-    --font-weight-mini-text: 400;
-    --font-size-breadcrumb: 1.2307692308rem;
-	--font-size-title-xlarge: 2.4615384615rem;
-	--font-size-title-large: 1.8461538462rem;
-	--font-size-title-medium: 1.5384615385rem;
-	--font-size-title-small: 1.2307692308rem;
-	--font-size-title-xsmall: 1.2307692308rem;
-	--font-size-title-xxsmall: 1.0769230769rem;
-	--font-size-cta: 1.0769230769rem;
-	--font-size-price-1: 1.5384615385rem;
-	--font-size-price-2: 1.0769230769rem;
-	--font-size-price-3: .9230769231rem;
-	--font-size-price-4: 1.2307692308rem;
-	--font-size-price-5: .7692307692rem;
-	--font-size-paragraph: 1.0769230769rem;
-	--font-size-link: .9230769231rem;
-	--font-size-error: .9230769231rem;
-	--font-size-mini-text: .9230769231rem;
-	--font-size-information-text: .8461538462rem;
-	--font-size-text-small: .7692307692rem;
-	--font-size-text-medium: .9230769231rem;
-	--font-size-text-large: 1.0769230769rem;
-}
-
+@import url(./font.css);
 
 *{
     box-sizing: border-box;
@@ -80,3 +22,31 @@ body{
     color: #444;
 }
 
+
+/* global usage */
+
+
+
+/* for the posters with only title */
+
+
+
+/* for the poster with price */
+
+
+
+
+/* for the text blocks */
+
+
+
+
+/* for the main images */
+
+
+
+/* for the links */
+
+
+
+/* for the buttons */
