@@ -36,3 +36,8 @@ input_field.addEventListener('blur', () => {
 search_icon.addEventListener('click', () => {
     input_field.focus();
 })
+
+
+
+
+

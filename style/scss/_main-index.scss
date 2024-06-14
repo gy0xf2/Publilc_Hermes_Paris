@@ -1,0 +1,299 @@
+@use "./general";
+@use "sass:math";
+
+.main{
+    
+
+    //wrapper of entire main content
+    h-main{
+        display: block;
+        height: 100%;
+        padding-bottom: general.rem(60);
+    }
+
+    //video play back
+    &-video__wrapper{
+        width: 100%;
+        padding: general.rem(40) 0;
+        max-width: 1920px;
+        margin: 0 auto;
+
+
+        //video inside
+        .main-ads-video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+    //text block
+    &-textblock__wrapper{
+        margin: 0 general.rem(16);
+        padding: general.rem(40) general.rem(20);
+        text-align: center;
+        font-weight: 200;
+        
+        
+        
+        //elements of text-block
+        .textblock-title{
+            font-family: var(--font-title);
+            font-size: general.rem(32);
+            line-height: general.rem(32);
+            font-weight: var(--font-weight-title);
+            margin: 0 0 general.rem(20);
+            overflow-wrap: break-word;
+        }
+
+        .textblock-intro{
+            font-family: var(--font-body-secondary);
+            font-size: general.$font-size-breadcrumb;
+            line-height: general.rem(24);
+            overflow-wrap: break-word;
+            margin: 1em 0;
+
+
+            //last paragraph has no margin-bottom
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+
+        //link insdie textblock
+        a{
+            @extend %link;
+            padding-bottom: general.rem(2);
+            border-bottom: 1px solid #444;
+        }
+    }
+
+
+
+
+    //whiteblock
+    &-whiteblock__wrapper{
+        margin: 0 general.rem(16);
+        padding: general.rem(40) general.rem(20);
+    }
+
+
+
+
+    //category section
+    &-category__wrapper{
+        margin: 0 general.rem(16);
+        padding: general.rem(40) 0;
+
+
+
+        //elements of category block
+        .category-media{
+            list-style: none;
+            width: 100%;
+            @extend %flex;
+            flex-flow: row wrap;
+            row-gap: general.rem(20);
+            column-gap: general.rem(20);
+        }
+
+
+        //category poster
+        .category-image__wrapper{
+            width: calc((100% - #{general.rem(20)}) / 2) ;
+        }
+        .category-link__wrapper{
+            @extend %link;
+        }
+        .category--image{
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .category--title{
+            font: #{general.rem(18)}/#{general.rem(20)} var(--font-title);
+            margin-top: general.rem(12);
+            display: block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            word-break: break-word;
+            max-width: 100%;
+            white-space: nowrap;
+        }
+    }
+
+
+    //main advert poster
+    &-adposter__wrapper{
+        padding-bottom: general.rem(40);
+        margin: 0 general.rem(16); 
+
+
+        //image inside adv
+        .adposter-image{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+
+
+
+
+    //products section
+    &-product__wrapper{
+        margin: 0 general.rem(16);
+        padding: general.rem(40) 0;
+
+
+
+        //elements of product block
+        .product-media{
+            list-style: none;
+            width: 100%;
+            @extend %flex;
+            flex-flow: row wrap;
+            row-gap: general.rem(20);
+            column-gap: general.rem(20);
+        }
+
+
+        //product poster
+        .product-image__wrapper{
+            width: calc((100% - #{general.rem(20)}) / 2) ;
+        }
+        .product-link__wrapper{
+            @extend %link;
+        }
+        .product--image{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        
+
+        //product information (name and price)
+        .product-info{
+            margin: general.rem(5) general.rem(5);
+
+            //elements of product info: name and price
+            &__name, &__price{
+                display: block;
+                white-space: wrap;
+            }
+
+
+            &__name{
+                font: #{general.rem(18)}/#{general.rem(24)} var(--font-title);
+                margin: 0 0 general.rem(5);
+                letter-spacing: general.rem(-1);
+            }
+            
+            &__price{
+                font-size: var(--font-size-price-2);
+                color: #696969;
+            }
+        }
+    }
+
+
+
+
+
+
+    
+    /*media query*/
+    //768px
+    @include general.minWidth(768px){
+
+
+        //text block
+        &-textblock__wrapper{
+            padding: general.rem(64) 12%;
+        }
+
+
+
+        //category section
+        &-category__wrapper{
+
+            .category-media{
+                column-gap: general.rem(40);
+            }
+            .category-image__wrapper{
+                //cuz of 3 columns => 120px for the gap
+                width: calc((100% - #{general.rem(120)}) / 4);
+            }
+        }
+
+
+
+        
+
+
+
+        //product section
+        &-product__wrapper{
+
+
+            .product-media{
+                column-gap: general.rem(40);
+            }
+            .product-image__wrapper{
+                width: calc((100% - #{general.rem(120)}) / 4);
+            }
+        }
+
+
+
+
+    }
+
+
+    //1920px
+    @include general.minWidth(1920px){
+        //text block section
+        &-textblock__wrapper{
+            padding-right: general.rem(150);
+            padding-left: general.rem(150);
+            max-width: 1258px;
+            margin: 0 auto;
+        }
+
+
+        //category section
+        &-category__wrapper{
+            max-width: 1255px;
+            margin: 0 auto;
+        }
+
+
+
+        //main adposter
+        &-adposter__wrapper{
+            max-width: 1258px;
+            margin: 0 auto;
+        }
+
+
+
+        //product section
+        &-product__wrapper{
+            max-width: 1258px;
+            margin: 0 auto;
+        }
+    }
+
+
+
+}
+
+
+
+
+
+
