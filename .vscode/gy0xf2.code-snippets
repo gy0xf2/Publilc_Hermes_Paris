@@ -8,9 +8,17 @@
 		"body": "general.$1"
 	},
 	"ajdhfkjasd": {
-		"prefix": "mw768",
+		"prefix": "768",
 		"body": [
 			"@include general.minWidth(768px){",
+			"\t$1",
+			"}"
+		]
+	},
+	"afgjdhfkjasd": {
+		"prefix": "1920",
+		"body": [
+			"@include general.minWidth(1920px){",
 			"\t$1",
 			"}"
 		]

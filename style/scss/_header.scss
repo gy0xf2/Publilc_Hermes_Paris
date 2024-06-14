@@ -11,6 +11,7 @@
     &-useful{
         display: none;
         padding: 0 general.rem(24);
+        margin: 0 auto;
         ul{
             list-style-type: none;
             line-height: 1rem;
@@ -54,6 +55,9 @@
             width: 100%;
             max-width: 1920px;
             padding-top: general.rem(14);
+        }
+        @include general.minWidth(1920px){
+            padding: 0;
         }
     }
 

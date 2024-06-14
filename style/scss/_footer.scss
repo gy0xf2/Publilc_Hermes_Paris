@@ -43,6 +43,7 @@
                 //responsive of links-nav
                 @include general.minWidth(768px){
                     border-bottom: none;
+                    flex-grow: 1;
                 }
                 &:last-child{
                     border-bottom: none;
@@ -140,6 +141,10 @@
                 padding: general.rem(24) 0;
             }
 
+            @include general.minWidth(1920px){
+                width: general.rem(440);
+            }
+
             //elements of subscribe section
             h-subscribe{
                 display: block;
@@ -203,7 +208,9 @@
                     //responsive of ul
                     @include general.minWidth(768px){
                         min-width: general.rem(180);
-
+                    }
+                    @include general.minWidth(1920px){
+                        min-width: general.rem(250);
                     }
 
                     li{
@@ -218,6 +225,9 @@
                             margin-right: general.rem(28);
                             
                         }
+                        @include general.minWidth(1920px){
+                            margin-right: general.rem(51.3333);
+                        }
                         &:last-child{
                             @include general.minWidth(768px){
                                 margin-right: 0;
@@ -231,6 +241,7 @@
 
             .social-heading{
                 @extend %footer-heading;
+                margin-bottom: general.rem(30);
             }
 
 
