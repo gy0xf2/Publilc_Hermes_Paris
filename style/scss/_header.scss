@@ -1,0 +1,323 @@
+@use "./general";
+
+
+.header{
+    width: 100vw;
+    max-width: 100%;
+
+
+
+    //header useful section
+    &-useful{
+        display: none;
+        padding: 0 general.rem(24);
+        ul{
+            list-style-type: none;
+            line-height: 1rem;
+            float: right;
+
+
+            //list items
+            li{
+                display: inline-block;
+                @include general.padding(0, 0, 0, 3.6167);
+                @include general.margin(0, 0, 0, 26);
+                height: 1rem;
+            }
+        }
+        //useful elements
+        &__btn{
+            @extend %btn;
+            font-size: general.$font-size-information-text;
+            line-height: 1;
+        }
+        &__link{
+            @extend %link;
+            font-size: general.$font-size-information-text;
+            font-family: var(--font-body);
+        }
+
+        //clear fix float
+        &::after{
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+
+
+
+
+        //responsive
+        @include general.minWidth(768px){
+            display: block;
+            width: 100%;
+            max-width: 1920px;
+            padding-top: general.rem(14);
+        }
+    }
+
+
+
+
+    //header main
+    &-main{
+        max-width: 100%;
+        @extend %pos-relative;
+        background-color: rgba(246, 241, 235, .7);
+        height: general.rem(50);
+        z-index: 100;
+
+
+
+        //wrapper
+        &_wrapper{
+            @include general.margin(0, 16, 0, 16);
+            //responsive
+            @include general.minWidth(768px){
+                margin: 0 general.rem(24);
+                padding: general.rem(8) 0;
+                height: 100%;
+            }
+        }
+
+
+        //logo section
+        &__logo{
+            opacity: 1;
+            @include general.pos-absolute(4, 50%);
+            z-index: 2;
+            //logo link
+            .main__link{
+                @extend %link;
+                box-sizing: content-box;
+                @include general.padding(5.5, 0, 0, 2);
+                
+            }
+            //logo svg
+            .main__svg{
+                display: block;
+                transform: translate(-44%, -44%);
+                @include general.dimension(60, 36);
+                
+                @include general.minWidth(768px){
+                    @include general.dimension(84, 48);
+                }
+            }
+
+
+
+            //responsive
+            @include general.minWidth(768px){
+                top: general.rem(7);
+            }
+
+            
+            
+        }
+
+
+
+        //header bar section
+        &__bar{
+            @extend %flex;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0;
+            max-width: 1920px;
+            height: general.rem(50);
+
+
+
+
+            //menu section
+            .menu{
+                @extend %flex;
+                width: general.rem(50);
+                align-items: center;
+
+                // responsive
+            @include general.minWidth(768px){
+                width: general.rem(140);
+            }
+            }
+
+            //seacrh section
+            .search{
+                flex-grow: 1;
+                padding-left: 0;
+                @extend %flex;
+                align-items: center;
+                @extend %pos-relative;
+
+                &-bar{
+                    width: 100%;
+                    line-height: 1;
+                    margin: 0;
+                    padding: 0;
+
+
+                    //elements of search bar
+                    &__icon{
+                        display: block;
+                        @include general.dimension(20, 20);
+                        @include general.pos-absolute(50%, 4);
+                        transform: translateY(-50%);
+                        cursor: pointer;
+
+                        //responsive
+                        @include general.minWidth(768px){
+                            left: general.rem(9);
+                        }
+                    }
+                    &__input{
+                        @extend %input;
+                        padding: 0;
+                        font-size: general.$font-size-breadcrumb;
+                        line-height: 2;
+                        width: 0;
+                        height: general.rem(24);
+                        transition: text-indent .3s ease-out;
+
+
+                        &:focus{
+                            outline: none;
+                            width: 100%;
+                            background-color: #fff;
+                        }
+
+
+                        //responsive
+                        @include general.minWidth(768px){
+                            border: 1px solid #000;
+                            background-color: #ffffff80;
+                            text-indent: 0;
+                            width: general.rem(140);
+                            height: general.rem(36);
+                            padding-left: general.rem(40);
+                            transition: width .2s ease-out;
+                        }
+                    }
+                }
+
+            }
+
+
+
+            //personal section
+            .personal{
+                ul{
+                    @extend %flex;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 0;
+                    max-width: 1920px;
+                    height: general.rem(50);
+                    list-style: none;
+                    
+                    li{
+                        @extend %flex;
+                        align-items: center;
+                        
+                    }
+                    a{
+                        @extend %link;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .account{
+                        justify-content: center;
+                        width: general.rem(50);
+                        #account-link{
+                            @extend %link;
+                            @extend %pos-relative;
+                            cursor: pointer;
+                            height: auto;
+                        }
+
+
+
+                        //responsive
+                        @include general.minWidth(768px){
+                            width: general.rem(114);
+                            justify-content: flex-end;
+                        }
+                    }
+
+
+
+                    .cart{
+                        margin-left: general.rem(15);
+                        @extend %flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        //responsive
+                        @include general.minWidth(768px){
+                            margin-left: general.rem(30);
+                        }
+                    }
+                }
+
+
+                // elements
+                &__svg{
+                    display: block;
+                    @include general.dimension(20, 20);
+                }
+                &__label{
+                    display: none;
+
+
+                    //responsive
+                    @include general.minWidth(768px){
+                        display: block;
+                        font-size: general.$font-size-link;
+                        font-family: var(--font-body);
+                        color: #000;
+                        @include general.padding(6.5, 0, 5, 10);
+                    }
+                }
+            }
+            
+
+
+
+            
+
+        }
+
+
+        //elements
+        &__btn{
+            @extend %btn;
+            display: flex;
+            align-items: center;
+            //inside button
+            .btn--icon{
+                display: block;
+                @include general.dimension(20, 20);
+
+
+            }
+            .btn--label{
+                display: none;
+
+                //responsive
+                @include general.minWidth(768px){
+                    display: block;
+                    color: #000;
+                    @include general.padding(0, 0, 0, 10);
+                }
+            }
+        }
+
+
+
+
+        //responsive
+        @include general.minWidth(768px){
+            width: 100vw;
+            height: general.rem(62);
+        }
+    }
+}

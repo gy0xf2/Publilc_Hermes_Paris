@@ -1,0 +1,58 @@
+
+@use "./elements";
+
+
+$font-size-breadcrumb: elements.rem(16);
+$font-size-title-xlarge: elements.rem(29);
+$font-size-title-large: elements.rem(24);
+$font-size-title-medium: elements.rem(20);
+$font-size-title-small: elements.rem(16);
+$font-size-title-xsmall: elements.rem(14);
+$font-size-title-xxsmall: elements.rem(13);
+$font-size-cta: elements.rem(14);
+$font-size-price-1: elements.rem(20);
+$font-size-price-2: elements.rem(14);
+$font-size-price-3: elements.rem(12);
+$font-size-price-4: elements.rem(16);
+$font-size-price-5: elements.rem(10);
+$font-size-paragraph: elements.rem(14);
+$font-size-link: elements.rem(14);
+$font-size-error: elements.rem(12);
+$font-size-mini-text: elements.rem(12);
+$font-size-information-text: elements.rem(11);
+$font-size-text-small: elements.rem(10);
+$font-size-text-medium: elements.rem(12);
+$font-size-text-large: elements.rem(14);
+
+@font-face {
+    font-family: 'Filosofia';
+    src: url('../../docs/fonts/FilosofiaUnicase.ttf');
+}
+@font-face {
+    font-family: "Orator W01";
+    src: url(../../docs/fonts/OratorW01Medium.ttf);
+}
+@font-face {
+    font-family: "Helvetica W01";
+    src: url(../../docs/fonts/HelveticaW01Roman.ttf);
+}
+@font-face {
+    font-family: "Akkurat";
+    src: url(../../docs/fonts/Akkurat-Regular.ttf);
+}
+@font-face {
+    font-family: "Jungle-Regular";
+    src: url(../../docs/fonts/JungleDF.ttf);
+}
+
+
+
+
+%footer-heading{
+    font-size: $font-size-breadcrumb;
+                font-family: var(--font-title);
+                margin-bottom: elements.rem(10);
+                font-weight: 400;
+                line-height: elements.rem(22);
+                display: inline-block;
+}

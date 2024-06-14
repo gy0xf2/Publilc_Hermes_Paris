@@ -1,0 +1,30 @@
+{
+	"jshgkjfsd": {
+		"prefix": "rem",
+		"body": "general.rem($1)$2"
+	},
+	"hasdkjhfa": {
+		"prefix": "gene",
+		"body": "general.$1"
+	},
+	"ajdhfkjasd": {
+		"prefix": "mw768",
+		"body": [
+			"@include general.minWidth(768px){",
+			"\t$1",
+			"}"
+		]
+	},
+	"ahkjfhdas": {
+		"prefix": "gpadding",
+		"body": "@include general.padding($1);$2"
+	},
+	"ajdhfads": {
+		"prefix": "gmargin",
+		"body": "@include general.margin($1);$2"
+	},
+	"adkfjhadsf": {
+		"prefix": "ext",
+		"body": "@extend \"$1\""
+	}
+}

@@ -1,0 +1,106 @@
+@use "./general";
+@use "./header";
+@use "./footer";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 81.25%;
+}
+:root{
+    --font-title: "Orator W01", "Gill Sans", "Gill Sans MT", calibri, serif;
+    --font-body: "Helvetica W01", "Helvetica Neue", sans-serif;
+    --font-body-secondary: "Courier New", monospace;
+    --font-filosofia: "Filosofia", serif;
+    --font-akkurat: "Akkurat", serif;
+    --font-jungle-love: "Jungle-Regular", serif;
+    --font-brides-de-gala: "BridesdeGala-Regular", serif;
+    --font-mors-a-jouet: "Mors-Regular-Auto", serif;
+    --font-size-breadcrumb: #{general.$font-size-breadcrumb};
+    --font-size-title-xlarge: #{general.$font-size-title-xlarge};
+    --font-size-title-large: #{general.$font-size-title-large};
+    --font-size-title-medium: #{general.$font-size-title-medium};
+    --font-size-title-small: #{general.$font-size-title-small};
+    --font-size-title-xsmall: #{general.$font-size-title-xsmall};
+    --font-size-title-xxsmall: #{general.$font-size-title-xxsmall};
+    --font-size-cta: #{general.$font-size-cta};
+    --font-size-price-1: #{general.$font-size-price-1};
+    --font-size-price-2: #{general.$font-size-price-2};
+    --font-size-price-3: #{general.$font-size-price-3};
+    --font-size-price-4: #{general.$font-size-price-4};
+    --font-size-price-5: #{general.$font-size-price-5};
+    --font-size-paragraph: #{general.$font-size-paragraph};
+    --font-size-link: #{general.$font-size-link};
+    --font-size-error: #{general.$font-size-error};
+    --font-size-mini-text: #{general.$font-size-mini-text};
+    --font-size-information-text: #{general.$font-size-information-text};
+    --font-size-text-small: #{general.$font-size-text-small};
+    --font-size-text-medium: #{general.$font-size-text-medium};
+    --font-size-text-large: #{general.$font-size-text-large};
+    --font-weight-title: 400;
+    --font-weight-title-bold: 600;
+    --font-weight-cta: 500;
+    --font-weight-price-1: 400;
+    --font-weight-price-2: 400;
+    --font-weight-paragraph: 400;
+    --font-weight-paragraph-bold: 600;
+    --font-weight-link: 400;
+    --font-weight-error: 400;
+    --font-weight-mini-text: 400;
+}
+
+
+
+body{
+    font-family: var(--font-body);
+    color: #444;
+    background-color: #f6f1eb;
+    line-height: 157.1428571429%;
+    font-weight: 200;
+}
+
+
+h-root{
+    @extend %flex-column;
+}
+
+
+
+/*Components*/
+//buttons
+
+
+
+
+
+/*Sections*/
+
+
+
+
+//home page
+
+
+
+
+//footer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

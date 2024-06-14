@@ -1,0 +1,38 @@
+/*mixins*/
+@mixin pos-absolute($top: 0, $left: 0){
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+
+
+
+/*display setup*/
+
+
+
+//flex
+%flex{
+    display: flex;
+    &-column{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+//grid
+%grid{
+    display: grid;
+}
+
+
+
+//position
+%pos-relative{
+    position: relative;
+}
+
+
+

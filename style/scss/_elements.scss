@@ -1,0 +1,57 @@
+//functs
+
+@function rem($value){
+    @return calc($value / 13) * 1rem;
+}
+
+
+
+/*mixins*/
+//image
+@mixin dimension($w: auto, $h: auto){
+    width: rem($w);
+    height: rem($h);
+}
+
+
+//padding
+@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0){
+    padding: rem($top) rem($right) rem($bottom) rem($left);
+}
+//margin
+@mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0){
+    margin: rem($top) rem($right) rem($bottom) rem($left);
+}
+
+
+
+
+/*elements*/
+
+//buttons
+%btn{
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #444;
+}
+
+
+//links
+%link{
+    text-decoration: none;
+    color: #444;
+    cursor: pointer;
+}
+
+
+%input{
+    border: none;
+    outline: none;
+    color: #000;
+}
+
+
+
