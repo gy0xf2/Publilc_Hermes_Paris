@@ -262,6 +262,10 @@
             padding-left: general.rem(150);
             max-width: 1258px;
             margin: 0 auto;
+
+            .textblock-intro{
+                margin: 0 general.rem(100) general.rem(20);
+            }
         }
 
 
