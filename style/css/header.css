@@ -1,0 +1,291 @@
+/*mixins*/
+/*display setup*/
+.header-main__bar, .header-main__bar .menu, .header-main__bar .search, .header-main__bar .personal ul, .header-main__bar .personal ul li, .header-main__bar .personal ul .cart {
+  display: flex;
+}
+.header-main, .header-main__bar .search, .header-main__bar .personal ul .account #account-link {
+  position: relative;
+}
+
+/*mixins*/
+/*elements*/
+.header-useful__btn, .header-main__btn {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #444;
+}
+
+.header-useful__link, .header-main__logo .main__link, .header-main__bar .personal ul a, .header-main__bar .personal ul .account #account-link {
+  text-decoration: none;
+  color: #444;
+  cursor: pointer;
+}
+
+.header-main__bar .search-bar__input {
+  border: none;
+  outline: none;
+  color: #000;
+}
+
+@font-face {
+  font-family: "Filosofia";
+  src: url("../../docs/fonts/FilosofiaUnicase.ttf");
+}
+@font-face {
+  font-family: "Orator W01";
+  src: url(../../docs/fonts/OratorW01Medium.ttf);
+}
+@font-face {
+  font-family: "Helvetica W01";
+  src: url(../../docs/fonts/HelveticaW01Roman.ttf);
+}
+@font-face {
+  font-family: "Akkurat";
+  src: url(../../docs/fonts/Akkurat-Regular.ttf);
+}
+@font-face {
+  font-family: "Jungle-Regular";
+  src: url(../../docs/fonts/JungleDF.ttf);
+}
+.header {
+  width: 100vw;
+  max-width: 100%;
+}
+.header-useful {
+  display: none;
+  padding: 0 1.8461538462rem;
+  margin: 0 auto;
+}
+.header-useful ul {
+  list-style-type: none;
+  line-height: 1rem;
+  float: right;
+}
+.header-useful ul li {
+  display: inline-block;
+  padding: 0rem 0rem 0rem 0.2782076923rem;
+  margin: 0rem 0rem 0rem 2rem;
+  height: 1rem;
+}
+.header-useful__btn {
+  font-size: 0.8461538462rem;
+  line-height: 1;
+}
+.header-useful__link {
+  font-size: 0.8461538462rem;
+  font-family: var(--font-body);
+}
+.header-useful::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+@media screen and (min-width: 768px) {
+  .header-useful {
+    display: block;
+    width: 100%;
+    max-width: 1920px;
+    padding-top: 1.0769230769rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .header-useful {
+    padding: 0;
+  }
+}
+.header-main {
+  max-width: 100%;
+  background-color: rgba(246, 241, 235, 0.7);
+  height: 3.8461538462rem;
+  z-index: 100;
+}
+.header-main_wrapper {
+  margin: 0rem 1.2307692308rem 0rem 1.2307692308rem;
+}
+@media screen and (min-width: 768px) {
+  .header-main_wrapper {
+    margin: 0 1.8461538462rem;
+    padding: 0.6153846154rem 0;
+    height: 100%;
+  }
+}
+.header-main__logo {
+  opacity: 1;
+  position: absolute;
+  top: 4;
+  left: 50%;
+  z-index: 2;
+}
+.header-main__logo .main__link {
+  box-sizing: content-box;
+  padding: 0.4230769231rem 0rem 0rem 0.1538461538rem;
+}
+.header-main__logo .main__svg {
+  display: block;
+  transform: translate(-44%, -44%);
+  width: 4.6153846154rem;
+  height: 2.7692307692rem;
+}
+@media screen and (min-width: 768px) {
+  .header-main__logo .main__svg {
+    width: 6.4615384615rem;
+    height: 3.6923076923rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header-main__logo {
+    top: 0.5384615385rem;
+  }
+}
+.header-main__bar {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  max-width: 1920px;
+  height: 3.8461538462rem;
+}
+.header-main__bar .menu {
+  width: 3.8461538462rem;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .header-main__bar .menu {
+    width: 10.7692307692rem;
+  }
+}
+.header-main__bar .search {
+  flex-grow: 1;
+  padding-left: 0;
+  align-items: center;
+}
+.header-main__bar .search-bar {
+  width: 100%;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+.header-main__bar .search-bar__icon {
+  display: block;
+  width: 1.5384615385rem;
+  height: 1.5384615385rem;
+  position: absolute;
+  top: 50%;
+  left: 4;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .header-main__bar .search-bar__icon {
+    left: 0.6923076923rem;
+  }
+}
+.header-main__bar .search-bar__input {
+  padding: 0;
+  font-size: 1.2307692308rem;
+  line-height: 2;
+  width: 0;
+  height: 1.8461538462rem;
+  transition: text-indent 0.3s ease-out;
+}
+.header-main__bar .search-bar__input:focus {
+  outline: none;
+  width: 100%;
+  background-color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .header-main__bar .search-bar__input {
+    border: 1px solid #000;
+    background-color: rgba(255, 255, 255, 0.5019607843);
+    text-indent: 0;
+    width: 10.7692307692rem;
+    height: 2.7692307692rem;
+    padding-left: 3.0769230769rem;
+    transition: width 0.2s ease-out;
+  }
+}
+.header-main__bar .personal ul {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  max-width: 1920px;
+  height: 3.8461538462rem;
+  list-style: none;
+}
+.header-main__bar .personal ul li {
+  align-items: center;
+}
+.header-main__bar .personal ul a {
+  display: flex;
+  align-items: center;
+}
+.header-main__bar .personal ul .account {
+  justify-content: center;
+  width: 3.8461538462rem;
+}
+.header-main__bar .personal ul .account #account-link {
+  cursor: pointer;
+  height: auto;
+}
+@media screen and (min-width: 768px) {
+  .header-main__bar .personal ul .account {
+    width: 8.7692307692rem;
+    justify-content: flex-end;
+  }
+}
+.header-main__bar .personal ul .cart {
+  margin-left: 1.1538461538rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media screen and (min-width: 768px) {
+  .header-main__bar .personal ul .cart {
+    margin-left: 2.3076923077rem;
+  }
+}
+.header-main__bar .personal__svg {
+  display: block;
+  width: 1.5384615385rem;
+  height: 1.5384615385rem;
+}
+.header-main__bar .personal__label {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header-main__bar .personal__label {
+    display: block;
+    font-size: 1.0769230769rem;
+    font-family: var(--font-body);
+    color: #000;
+    padding: 0.5rem 0rem 0.3846153846rem 0.7692307692rem;
+  }
+}
+.header-main__btn {
+  display: flex;
+  align-items: center;
+}
+.header-main__btn .btn--icon {
+  display: block;
+  width: 1.5384615385rem;
+  height: 1.5384615385rem;
+}
+.header-main__btn .btn--label {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header-main__btn .btn--label {
+    display: block;
+    color: #000;
+    padding: 0rem 0rem 0rem 0.7692307692rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header-main {
+    width: 100vw;
+    height: 4.7692307692rem;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */
