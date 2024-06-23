@@ -56,22 +56,23 @@
             .product-popup__wrapper{
                 //normal products
                 grid-column: span 1;
-
-
+                
+                
                 //element of a popup product
                 .product-popup--slide{
                     position: relative;
                     padding-top: 100%;
                     overflow: hidden;
-
+                    margin-left: 1px;
+                    
                     //elements of a slide
-
+                    
                     //image slide
                     .slide-list--link{
                         @extend %link;
                         display: block;
-
-
+                        
+                        
                         .slide-list{
                             display: flex;
                             transform: translateX(-100%);
@@ -104,8 +105,8 @@
                         //element of process - the dot
                         .process__dot{
                             list-style: none;
-                            width: 4px;
-                            height: 4px;
+                            width: 3px;
+                            height: 3px;
                             margin: 5px;
                             background: #696969;
                             border-radius: 50%;
@@ -180,9 +181,13 @@
                     width: 100%;
                     padding: 25px 24px;
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: center;
                     grid-column: 1/-1;
+
+
+                    //image section
 
                     .ad-poster--img{
                         width: 100%;
@@ -192,6 +197,37 @@
                             width: 100%;
                             height: auto;
                             object-fit: cover;
+                        }
+                    }
+
+
+                    //textblock
+                    .ad-poster--textblock{
+                        width: 100%;
+                        color: #444;
+                        font-family: var(--font-body);
+                        margin: 16px 0;
+
+                        //textblock elements
+                        .poster--textblock__heading{
+                            font-size: general.rem(28);
+                            line-height: general.rem(30);
+                            letter-spacing: general.rem(-1.5);
+                            font-family: var(--font-title);
+                            font-weight: var(--font-weight-title);
+                            overflow: hidden;
+                            overflow-wrap: break-word;
+                            text-align: center;
+                            margin-bottom: 8px;
+                        }
+
+                        .poster--textblock__desc{
+                            text-align: center;
+                            margin-bottom: 16px;
+                            font-size: general.$font-size-mini-text;
+                            line-height: general.rem(18);
+                            padding: 0;
+                            letter-spacing: 0;
                         }
                     }
                 }
@@ -278,7 +314,7 @@
                     padding-left: 0;
                     padding-right: 0;
 
-                    .ad-poster--img{
+                    .ad-poster--img, .ad-poster--textblock{
                         width: 73%;
                         max-width: 1480px;
                     }

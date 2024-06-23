@@ -65,6 +65,13 @@ body{
 
 h-root{
     @extend %flex-column;
+
+    .sticky{
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
 }
 
 

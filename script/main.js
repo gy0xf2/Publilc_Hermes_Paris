@@ -1,44 +1,52 @@
-const logo = document.querySelector('#header-hermes-logo');
-const input_field = document.querySelector('#header-search-field');
-const search_icon = document.querySelector('#header-search-icon');
-const scrW = screen.width;
+//handle logo auto hide
+const hermesLogo = document.querySelector('#header-hermes-logo')
+const searchIcon = document.querySelector('.search-bar__icon')
+const inputField = document.querySelector('#header-search-field')
 
-input_field.addEventListener('focus', () => {
-    input_field.style.width = '100%';
-    if (scrW < 768) {
-        input_field.style.transition = 'width .2s ease-out'
-        input_field.style.height = 36 / 13 + 'rem';
-        input_field.style.border = '1px solid #000';
-        input_field.style.paddingLeft = 5 / 13 + 'rem'
-        search_icon.style.display = 'none';
+const mobile = window.matchMedia('(min-width: 320px) and (max-width: 767px)')
+const tabletAndDesktop = window.matchMedia('min-width: 768px')
 
+
+
+function defaultSetup() {
+    if (mobile.matches) {
+        inputField.style.height = `0`
+        inputField.style.transition = `none`
+        inputField.style.border = `none`
+        inputField.style.marginLeft = `0`
+        inputField.style.paddingLeft = `0`
+        return
     }
-    else {
+    inputField.style.height = `${36 / 13}rem`
+    inputField.style.transition = `.2s ease-out`
+    inputField.style.border = `1px solid #000`
+    inputField.style.paddingLeft = `${40 / 13}rem`
 
+}
+function onFocus() {
+    if (mobile.matches) {
+        inputField.style.height = `${36 / 13}rem`
+        inputField.style.transition = `.2s ease-out`
+        inputField.style.border = `1px solid #000`
+        inputField.style.marginLeft = `-5px`
+        inputField.style.paddingLeft = `30px`
     }
-    logo.style.display = 'none'
+    hermesLogo.style.visibility = 'hidden'
+}
+
+function onBlur() {
+    defaultSetup()
+    hermesLogo.style.visibility = 'visible'
+}
+
+window.addEventListener('load', defaultSetup)
+window.addEventListener('resize', defaultSetup)
+
+inputField.addEventListener('focus', onFocus)
+inputField.addEventListener('blur', onBlur)
+searchIcon.addEventListener('click', () => {
+    inputField.focus()
 })
-
-
-
-input_field.addEventListener('blur', () => {
-    if (scrW < 768) {
-        search_icon.style.display = 'block'
-        input_field.style.width = 1 / 13 + 'rem'
-        input_field.style.height = 1 / 13 + 'rem'
-        input_field.style.border = 'none'
-    }
-    else {
-        input_field.style.width = 140 / 13 + 'rem'
-    }
-    logo.style.display = 'block';
-})
-search_icon.addEventListener('click', () => {
-    input_field.focus();
-})
-
-
-
 
 
 
@@ -78,16 +86,18 @@ slideShows.forEach(slide => {
 
     function handleTouchMove(touchEvent) {
         currentX = touchEvent.touches[0].clientX
-        deltaX = currentX - startX
+        deltaX = (currentX - startX)
         currentPlace = previousPlace + deltaX
-        setSlideByPlace()
+        setTimeout(() => {
+            setSlideByPlace()
+        }, 10)
     }
 
     function handleTouchEnd(touchEvent) {
         slide.removeEventListener('touchmove', handleTouchMove)
         let movedDistance = currentPlace - previousPlace
-        if (movedDistance * -1 > imageList.offsetWidth / 20 && currentIndex < imageList.children.length - 2) currentIndex++
-        if (movedDistance > imageList.offsetWidth / 20 && currentIndex > 1) currentIndex--
+        if (movedDistance * -1 > imageList.offsetWidth / 100 * 20 && currentIndex < imageList.children.length - 2) currentIndex++
+        if (movedDistance > imageList.offsetWidth / 100 * 20 && currentIndex > 1) currentIndex--
         setSlideByIndex()
         handleSlideProcess()
     }
@@ -135,7 +145,7 @@ slideShows.forEach(slide => {
         handleSlideProcess()
         setTimeout(() => {
             imageList.style.transition = '.4s ease-in-out'
-        }, 400)
+        }, 10)
     }
 
     function resetSize() {
@@ -240,4 +250,18 @@ slideShows.forEach(slide => {
     prev.addEventListener('click', prevSlide)
     slide.addEventListener('mouseenter', handleMouseOver)
 
+})
+
+
+
+//handle sticky header when scroll
+const header = document.querySelector('.header-main')
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > header.offsetTop) {
+        header.classList.add('sticky')
+    }
+    else {
+        header.classList.remove('sticky')
+    }
 })

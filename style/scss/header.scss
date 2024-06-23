@@ -67,10 +67,11 @@
     //header main
     &-main{
         max-width: 100%;
+        opacity: 1;
         @extend %pos-relative;
-        background-color: rgba(246, 241, 235, .7);
+        background-color: #f6f1eb;
         height: general.rem(50);
-        z-index: 100;
+        z-index: 101;
 
 
 

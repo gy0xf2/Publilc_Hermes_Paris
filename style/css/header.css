@@ -98,9 +98,10 @@
 }
 .header-main {
   max-width: 100%;
-  background-color: rgba(246, 241, 235, 0.7);
+  opacity: 1;
+  background-color: #f6f1eb;
   height: 3.8461538462rem;
-  z-index: 100;
+  z-index: 101;
 }
 .header-main_wrapper {
   margin: 0rem 1.2307692308rem 0rem 1.2307692308rem;
