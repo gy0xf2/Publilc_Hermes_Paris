@@ -80,6 +80,7 @@ slideShows.forEach(slide => {
         if (mobileDevice.matches) {
             startX = touchEvent.touches[0].clientX
             slide.addEventListener('touchmove', handleTouchMove)
+            slide.addEventListener('touchcancel', handleTouchEnd)
             slide.addEventListener('touchend', handleTouchEnd)
         }
     }
