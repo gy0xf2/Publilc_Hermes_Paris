@@ -96,8 +96,8 @@ slideShows.forEach(slide => {
     function handleTouchEnd(touchEvent) {
         slide.removeEventListener('touchmove', handleTouchMove)
         let movedDistance = currentPlace - previousPlace
-        if (movedDistance * -1 > imageList.offsetWidth / 100 * 20 && currentIndex < imageList.children.length - 2) currentIndex++
-        if (movedDistance > imageList.offsetWidth / 100 * 20 && currentIndex > 1) currentIndex--
+        if (movedDistance * -1 > imageList.offsetWidth / 100 * 40 && currentIndex < imageList.children.length - 2) currentIndex++
+        if (movedDistance > imageList.offsetWidth / 100 * 40 && currentIndex > 1) currentIndex--
         setSlideByIndex()
         handleSlideProcess()
     }
